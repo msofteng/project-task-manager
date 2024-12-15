@@ -19,7 +19,7 @@
 
                 <h:outputLabel for="dataInicio" value="Data de Início" />
                 <h:inputText type="date" id="dataInicio" value="#{projetoBean.projeto.dataInicio}" required="true">
-                    <f:convertDateTime pattern="dd/MM/yyyy" />
+                    <f:convertDateTime pattern="yyyy-MM-dd" />
                 </h:inputText>
                 <h:message for="dataInicio" styleClass="error" />
 
