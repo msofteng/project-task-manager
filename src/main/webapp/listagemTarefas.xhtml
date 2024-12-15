@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core">
+    <h:head>
+        <title>Listagem | Tarefas</title>
+    </h:head>
+    <h:body>
+        <h:dataTable value="#{tarefaBean.tarefas}" var="tarefa">
+            <h:column>
+                <f:facet name="header">Título</f:facet>
+                #{tarefa.titulo}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Descrição</f:facet>
+                #{tarefa.descricao}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Prioridade</f:facet>
+                #{tarefa.prioridade}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Estimativa</f:facet>
+                #{tarefa.estimativa}
+            </h:column>
+            <h:column>
+                <h:commandButton value="Visualizar" action="#{tarefaBean.visualizarTarefa(tarefa.id)}" />
+                <h:commandButton value="Editar" action="#{tarefaBean.editarTarefa(tarefa.id)}" />
+                <h:commandButton value="Excluir" action="#{tarefaBean.excluirTarefa(tarefa.id)}" />
+            </h:column>
+        </h:dataTable>
+    </h:body>
+</html>
