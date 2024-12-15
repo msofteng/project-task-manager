@@ -44,6 +44,12 @@
             <artifactId>weld-servlet-core</artifactId>
             <version>6.0.0.Beta4</version>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.36</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
     
     <build>

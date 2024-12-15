@@ -1,4 +1,4 @@
-package com.caed.projectaskmanager.beans;
+package com.caed.projectaskmanager.bean;
 
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Named;
