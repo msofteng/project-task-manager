@@ -11,7 +11,7 @@
                 <h:form>
                     <h:panelGrid columns="1">
                         <h:outputLabel for="tituloTarefa" value="Título" />
-                        <h:inputText id="tituloTarefa" required="true" />
+                        <h:inputText id="tituloTarefa" required="true" value="#{tarefaBean.tarefa.titulo}" />
                         <h:message for="tituloTarefa" styleClass="error" />
 
                         <h:outputLabel for="descricaoTarefa" value="Descrição" />
