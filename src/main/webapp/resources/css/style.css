@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: calc(100% - 40px);
+    padding: 15px 20px;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header #links {
+    display: flex;
+}
+
+header #links a:not(:last-child) {
+    margin-right: 15px;
+}
+
+#page {
+    padding: 45px 20px;
+}
+
+table {
+    width: 100%;
+}
+
+textarea, input[type="text"], input[type="password"], select {
+    line-height: 1.5em;
+    border-radius: 0.4em;
+}
+
+textarea, input[type="text"], input[type="password"] {
+    width: calc(100% - 16px);
+    padding: 6px 8px;
+}
+
+select {
+    width: calc(100% + 2px);
+    padding: 6px 5px;
+}
+
+button, input[type="reset"], input[type="submit"], input[type="button"] {
+    padding: 5px 10px;
+    border-radius: 0.4em;
+}

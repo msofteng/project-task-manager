@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:a4j="http://richfaces.org/a4j">
+    <body>
+        <ui:composition template="/templates/template.xhtml">
+            <ui:define name="title">CAEd | Cadastro de Tarefas</ui:define>
+
+            <ui:define name="body">
+                <h:form>
+                    <h:panelGrid columns="1">
+                        <h:outputLabel for="tituloTarefa" value="Título" />
+                        <h:inputText id="tituloTarefa" required="true" />
+                        <h:message for="tituloTarefa" styleClass="error" />
+
+                        <h:outputLabel for="descricaoTarefa" value="Descrição" />
+                        <h:inputTextarea id="descricaoTarefa" required="true" />
+                        <h:message for="descricaoTarefa" styleClass="error" />
+
+                        <h:outputLabel for="prioridade" value="Prioridade" />
+                        <h:selectOneMenu id="prioridade">
+                            <f:selectItem itemLabel="Muito Baixa" itemValue="MUITO_BAIXA" />
+                            <f:selectItem itemLabel="Baixa" itemValue="BAIXA" />
+                            <f:selectItem itemLabel="Alta" itemValue="ALTA" />
+                            <f:selectItem itemLabel="Muito Alta" itemValue="MUITO_ALTA" />
+                        </h:selectOneMenu>
+                        <h:message for="prioridade" styleClass="error" />
+
+                        <h:outputLabel for="estimativa" value="Estimativa (em horas)" />
+                        <h:inputText id="estimativa" required="true">
+                            <f:convertDateTime pattern="HH:mm" />
+                        </h:inputText>
+                        <h:message for="estimativa" styleClass="error" />
+
+                        <h:commandButton value="Cadastrar Tarefa" />
+                    </h:panelGrid>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>

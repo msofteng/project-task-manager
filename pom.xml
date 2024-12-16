@@ -6,7 +6,7 @@
 
     <groupId>com.caed</groupId>
     <artifactId>project-task-manager</artifactId>
-    <name>RichFaces 4 Application</name>
+    <name>Gerenciador de Projetos e Tarefas | CAEd</name>
     <version>1.0.0</version>
     <packaging>war</packaging>
 
@@ -218,4 +218,5 @@
             </build>
         </profile>
     </profiles>
+    <description>gerenciador de projetos e tarefas utilizando JSF / RichFaces / Hibernate</description>
 </project>
