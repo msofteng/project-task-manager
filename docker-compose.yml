@@ -1,0 +1,7 @@
+services:
+    project-task:
+        container_name: project-task-manager
+        build:
+            context: .
+        ports:
+            - 8080:8080

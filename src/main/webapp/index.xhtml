@@ -1,20 +1,24 @@
-<?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html">
-    <h:head>
-        <title>Facelet Title</title>
-    </h:head>
-    <h:body>
-        <h:form>
-            <h:outputText value="Bem-vindo ao Sistema de Gestão de Projetos!" />
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:a4j="http://richfaces.org/a4j">
 
-            <h:panelGrid columns="1">
-                <h:commandLink value="Cadastrar Novo Projeto" action="cadastroProjeto.xhtml" />
-                <h:commandLink value="Listar Projetos" action="listagemProjetos.xhtml" />
-                <h:commandLink value="Cadastrar Nova Tarefa" action="cadastroTarefa.xhtml" />
-                <h:commandLink value="Listar Tarefas" action="listagemTarefas.xhtml" />
-            </h:panelGrid>
-        </h:form>
-    </h:body>
+<body>
+    <ui:composition template="/templates/template.xhtml">
+
+        <ui:define name="title">RichFaces Sample</ui:define>
+
+        <ui:define name="body">
+            <h:form prependId="false">
+                <h:outputLabel value="Name:" for="nameInput" />
+                <h:inputText id="nameInput" value="#{richBean.name}">
+                    <a4j:ajax event="keyup" render="output" />
+                </h:inputText>
+                <h:panelGroup id="output">
+                    <h:outputText value="Hello #{richBean.name}!"
+                        rendered="#{not empty richBean.name}" />
+                </h:panelGroup>
+                            </h:form>
+        </ui:define>
+    </ui:composition>
+</body>
 </html>
