@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Outros ###
+readme.txt
+nb-configuration.xml
+faces-config.NavData
