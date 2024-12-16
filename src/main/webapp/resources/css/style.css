@@ -50,3 +50,7 @@ button, input[type="reset"], input[type="submit"], input[type="button"] {
     padding: 5px 10px;
     border-radius: 0.4em;
 }
+
+tr:has(> td label):not(:first-child) td {
+    padding-top: 7.5px;
+}
