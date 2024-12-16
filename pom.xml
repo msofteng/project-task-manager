@@ -56,7 +56,6 @@
          -->
         <org.richfaces.version>4.5.17.Final</org.richfaces.version>
         <version.jsp-api>2.1</version.jsp-api>
-        <version.jstl-api>1.2</version.jstl-api>
         <version.servlet-api>3.0.1</version.servlet-api>
         <version.el-api>2.2</version.el-api>
     </properties>
@@ -127,7 +126,6 @@
         <dependency>
             <groupId>javax.servlet.jsp.jstl</groupId>
             <artifactId>jstl-api</artifactId>
-            <version>${version.jstl-api}</version>
         </dependency>
 
         <dependency>
