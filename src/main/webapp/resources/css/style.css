@@ -31,12 +31,29 @@ table {
     width: 100%;
 }
 
-textarea, input[type="text"], input[type="password"], select {
+.rf-cal {
+    width: calc(100% - 20px);
+}
+
+input[type="time"] {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #C4C0B9;
+    font-size: 11px;
+    font-family: Arial, Verdana, sans-serif ;
+    color: #000000;
+    background-repeat: repeat-x;
+    background-position: 1px 1px;
+    background-color: #ffffff;
+    background-image: url(/project-task-manager/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.5.17.Final/Packed/DEFAULT/org.richfaces.images/inputBackgroundImage.png);
+}
+
+textarea, input[type="text"], input[type="password"], input[type="time"], select {
     line-height: 1.5em;
     border-radius: 0.4em;
 }
 
-textarea, input[type="text"], input[type="password"] {
+textarea, input[type="text"], input[type="password"], input[type="time"] {
     width: calc(100% - 16px);
     padding: 6px 8px;
 }
