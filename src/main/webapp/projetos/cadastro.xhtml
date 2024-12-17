@@ -24,7 +24,7 @@
                         
                         <h:inputHidden value="#{projetoBean.projeto.id}"/>
 
-                        <h:commandButton value="Cadastrar" action="#{projetoBean.salvarProjeto()}" />
+                        <h:commandButton value="#{projetoBean.projeto.id != null ? 'Atualizar' : 'Cadastrar'}" action="#{projetoBean.salvarProjeto()}" />
                     </h:panelGrid>
                 </h:form>
             </ui:define>

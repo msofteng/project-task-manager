@@ -33,6 +33,8 @@
                             <f:convertDateTime type="time" pattern="HH:mm" />
                         </h:inputText>
                         <h:message for="estimativa" styleClass="error" />
+                        
+                        <h:inputHidden value="#{tarefaBean.projeto.id}"/>
 
                         <h:commandButton value="Cadastrar Tarefa" action="#{tarefaBean.salvarTarefa}" />
                     </h:panelGrid>

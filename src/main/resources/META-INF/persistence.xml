@@ -4,6 +4,7 @@
         <description>Hibernate EntityManager Demo</description>
         
         <class>com.caed.projectaskmanager.model.Projeto</class>
+        <class>com.caed.projectaskmanager.model.Tarefa</class>
         
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>

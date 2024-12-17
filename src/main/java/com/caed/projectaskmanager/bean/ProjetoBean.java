@@ -19,7 +19,7 @@ public class ProjetoBean implements Serializable {
     private List<Projeto> projetos;
     private Service<Projeto> projetoService;
     
-    public ProjetoBean() throws SQLException {
+    public ProjetoBean() {
         this.projeto = new Projeto();
         this.projetos = new ArrayList();
         
@@ -70,13 +70,16 @@ public class ProjetoBean implements Serializable {
     }
 
     public String editarProjeto(Long id) {
-        this.projeto = projetoService.findById(id);
         return "/projetos/cadastro.xhtml?faces-redirect=true&id=" + id;
     }
 
     public String excluirProjeto(Long id) {
         projetoService.delete(id);
         return "/projetos/index.xhtml?faces-redirect=true";
+    }
+    
+    public String adicionarTarefa(Long id) {
+        return "/tarefas/cadastro.xhtml?faces-redirect=true&projetoId=" + id;
     }
 
     public String visualizarProjeto(Long id) {
