@@ -1,5 +1,5 @@
 # Etapa 1: Construção do WAR com Maven
-FROM maven:3.8.6-openjdk-11-slim AS build
+FROM maven:3.8.6-openjdk-8-slim AS build
 
 # Define o diretório de trabalho para copiar o código do projeto
 WORKDIR /app
@@ -17,7 +17,7 @@ COPY src /app/src
 RUN mvn clean package -DskipTests
 
 # Etapa 2: Rodando o WAR no Tomcat
-FROM tomcat:9-jdk11-openjdk-slim
+FROM tomcat:9-jdk8-openjdk-slim
 
 # Copia o WAR gerado para o diretório webapps do Tomcat
 COPY --from=build /app/target/project-task-manager.war /usr/local/tomcat/webapps/

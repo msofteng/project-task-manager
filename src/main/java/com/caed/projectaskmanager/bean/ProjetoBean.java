@@ -1,24 +1,46 @@
 package com.caed.projectaskmanager.bean;
 
 import com.caed.projectaskmanager.model.Projeto;
+import com.caed.projectaskmanager.service.Service;
 import java.io.Serializable;
+import java.sql.SQLException;
 import javax.faces.bean.ManagedBean;
 import javax.faces.view.ViewScoped;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TimeZone;
+import javax.annotation.PostConstruct;
+import javax.faces.context.FacesContext;
 
 @ViewScoped
 @ManagedBean
 public class ProjetoBean implements Serializable {
     private Projeto projeto;
     private List<Projeto> projetos;
+    private Service<Projeto> projetoService;
     
-    public ProjetoBean() {
+    public ProjetoBean() throws SQLException {
         this.projeto = new Projeto();
         this.projetos = new ArrayList();
         
         TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
+    }
+    
+    @PostConstruct
+    public void init() {
+        this.projetoService = new Service<>(Projeto.class);
+        this.projetos = this.projetoService.findAll();
+        
+        // Recupera o parâmetro 'id' da URL
+        String id = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("id");
+
+        // Se 'id' for válido, carrega o projeto correspondente
+        if (id != null && !id.isEmpty()) {
+            this.projeto = projetoService.findById(Long.valueOf(id));
+        } else {
+            // Caso contrário, cria um novo projeto
+            this.projeto = new Projeto();
+        }
     }
 
     public Projeto getProjeto() {
@@ -38,23 +60,26 @@ public class ProjetoBean implements Serializable {
     }
     
     public String salvarProjeto() {
-        System.out.println("salvando o projeto");
-        System.out.println(this.projeto);
+        if (projeto.getId() == null) {
+            projetoService.create(projeto);
+        } else {
+            projetoService.update(projeto);
+        }
+        
         return "/projetos/index.xhtml?faces-redirect=true";
     }
 
     public String editarProjeto(Long id) {
-        System.out.println("editando o projeto");
-        return "/projetos/cadastro.xhtml?faces-redirect=true";
+        this.projeto = projetoService.findById(id);
+        return "/projetos/cadastro.xhtml?faces-redirect=true&id=" + id;
     }
 
     public String excluirProjeto(Long id) {
-        System.out.println("removendo o projeto");
+        projetoService.delete(id);
         return "/projetos/index.xhtml?faces-redirect=true";
     }
 
     public String visualizarProjeto(Long id) {
-        System.out.println("visualizando o projeto");
         return "/projetos/index.xhtml?faces-redirect=true";
     }
 }

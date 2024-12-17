@@ -21,8 +21,10 @@
                         <h:outputLabel for="dataInicio" value="Data de Início" />
                         <rich:calendar id="dataInicio" value="#{projetoBean.projeto.dataInicio}" required="true" />
                         <h:message for="dataInicio" styleClass="error" />
+                        
+                        <h:inputHidden value="#{projetoBean.projeto.id}"/>
 
-                        <h:commandButton value="Cadastrar" action="#{projetoBean.salvarProjeto}" />
+                        <h:commandButton value="Cadastrar" action="#{projetoBean.salvarProjeto()}" />
                     </h:panelGrid>
                 </h:form>
             </ui:define>

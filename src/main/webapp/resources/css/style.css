@@ -39,6 +39,10 @@ table.rf-cal-extr.rf-cal-popup {
     width: calc(100% - 20px);
 }
 
+td input[type="submit"]:not(:first-child) {
+    margin-left: 5px;
+}
+
 input[type="time"] {
     border-width: 1px;
     border-style: solid;

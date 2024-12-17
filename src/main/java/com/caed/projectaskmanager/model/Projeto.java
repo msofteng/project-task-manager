@@ -1,8 +1,15 @@
 package com.caed.projectaskmanager.model;
 
+import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
-public class Projeto {
+@Entity
+public class Projeto implements Serializable {
+    @Id
+    @GeneratedValue
     private Long id;
     private String titulo;
     private String descricao;
@@ -12,7 +19,7 @@ public class Projeto {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(final Long id) {
         this.id = id;
     }
 
