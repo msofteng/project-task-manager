@@ -5,6 +5,7 @@ Este projeto é um gerenciador de projetos e tarefas desenvolvido com:
 - Java Server Faces (JSF)
 - Hibernate
 - HQL (Hibernate Query Language)
+- ~~Spring Framework~~ _Obs.: Não foi necessário pois como o projeto foi desenvolvido numa aplicação gerada por um arquétipo do Maven, houveram dificuldades para integrar o Spring ao modelo inicial gerado, tendo um retrabalho de construir outro microsserviço além da aplicação JSF que seria a API para persistir as informações dos projetos e tarefas no banco de dados_
 
 > URL (raiz): http://localhost:8080/project-task-manager
 
